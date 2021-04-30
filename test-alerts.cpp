@@ -5,11 +5,19 @@
 
 
 
-TEST_CASE("infers the breach according to limits: EMAIL testing") 
+TEST_CASE("Print the ranges of a current data set") 
 {
-	float data[5] = {1,2,3,4,5};
-	rangeCheck(data , 5);
+	float data[5] = {1,2,3,4,5,7,9,10,11,12};
+	rangeCheck(data , sizeof(data));
 	REQUIRE( Print_Range(0 , 0 , 0 , 0, CHECK) == 1 );
 		  
 }
 
+/**FAil case: No print if there is no range present**/
+TEST_CASE("Do not Print the ranges of a current data set, if no pattern is present") 
+{
+	float data[5] = {1,3,,7,9,12};
+	rangeCheck(data , sizeof(data));
+	REQUIRE( Print_Range(0 , 0 , 0 , 0, CHECK) == 1 );
+		  
+}
