@@ -29,19 +29,31 @@ void rangeCheck(float *dataset_arr, unsigned int length_dataset)
 			}
 			if(pattern_started == 0) /*only print if pattern sequence is not present*/
 			{
-				Print_Range(range_start_idx , range_end_idx , dataset_arr , pattern_found);
+				(void)Print_Range(range_start_idx , range_end_idx , dataset_arr , pattern_found, UPDATE);
 				range_start_idx = idx ; // Update the index
 			}
 		}
 	}
 }
 
-void Print_Range(int start_idx , int end_idx , float* data_buff, int range_found)
+int Print_Range(int start_idx , int end_idx , float* data_buff, int range_found, int objective)
 {
-	if( (start_idx < end_idx ) && (range_found == 1) )
+	static int print_done = 0;
+	int retVal = 0;
+	if( objective == UPDATE )
 	{
-		printf("%f - %f\n" , data_buff[start_idx] , data_buff[end_idx]);
+		if( (start_idx < end_idx ) && (range_found == 1) )
+		{
+			printf("%f - %f\n" , data_buff[start_idx] , data_buff[end_idx]);
+			print_done =1;
+		}
 	}
+	else
+	{
+		retVal = print_done;
+		print_done = 0;
+	}
+	return retVal;
 }
 
 
