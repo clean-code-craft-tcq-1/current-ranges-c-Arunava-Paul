@@ -3,7 +3,14 @@
 #include "test/catch.hpp"
 #include "Range_checker.h"
 
-
+/**FAil case: No print if there is no range present**/
+TEST_CASE("Do not Print the ranges of a current data set, if no pattern is present") 
+{
+	float data[6] = {1,3,5,7,9,12};
+	rangeCheck(data , sizeof(data));
+	REQUIRE( Print_Range(0 , 0 , 0 , 0, CHECK) == 1 );
+		  
+}
 
 TEST_CASE("Print the ranges of a current data set") 
 {
@@ -13,11 +20,4 @@ TEST_CASE("Print the ranges of a current data set")
 		  
 }
 
-/**FAil case: No print if there is no range present**/
-TEST_CASE("Do not Print the ranges of a current data set, if no pattern is present") 
-{
-	float data[6] = {1,3,5,7,9,12};
-	rangeCheck(data , sizeof(data));
-	REQUIRE( Print_Range(0 , 0 , 0 , 0, CHECK) == 1 );
-		  
-}
+
