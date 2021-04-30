@@ -9,7 +9,7 @@ TEST_CASE("infers the breach according to limits: EMAIL testing")
 {
 	float data[5] = {1,2,3,4,5};
 	rangeCheck(data , 5);
-	REQUIRE(  == 1 );
+	REQUIRE( Print_Range(0 , 0 , 0 , 0, CHECK) == 1 );
 		  
 }
 
