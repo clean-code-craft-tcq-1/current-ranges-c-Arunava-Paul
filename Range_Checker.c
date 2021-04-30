@@ -33,6 +33,11 @@ void rangeCheck(float *dataset_arr, unsigned int length_dataset)
 				range_start_idx = idx ; // Update the index
 			}
 		}
+		/**Be ready for next call- This Error found after failing test case**/
+		idx = 0;
+		range_start_idx = 0;
+		range_end_idx = 0;
+		/*************************************/
 	}
 }
 
