@@ -52,5 +52,6 @@ Adapt/adopt/extend the `yml` files from one of your workflow folders.
 
 Implement one failing test and at least one passing test:
 
-- _enter the name of a **passing** test
-- _enter the name of a **failing** test
+- passing : Print the ranges of a current data set
+- failing : Do not Print the ranges of a current data set, if no pattern is present
+
