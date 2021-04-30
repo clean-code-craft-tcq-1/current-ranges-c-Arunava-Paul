@@ -49,7 +49,7 @@ int Print_Range(int start_idx , int end_idx , float* data_buff, int range_found,
 	{
 		if( (start_idx < end_idx ) && (range_found == 1) )
 		{
-			printf("%f - %f\n" , data_buff[start_idx] , data_buff[end_idx]);
+			printf("Ranges are : %f - %f, total values : %d\n" , data_buff[start_idx] , data_buff[end_idx], (end_idx - start_idx));
 			print_done =1;
 		}
 	}
