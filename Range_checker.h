@@ -2,7 +2,8 @@
 #define RANGE_CHECK_H
 
 #define DIFFERENCE_CHECK(x,y) (Return_Data_distance(x,y))
-
+#define UPDATE 1
+#define CHECK 0
 static float Return_Data_distance(float a, float b )
 {
 	float c;
@@ -15,7 +16,7 @@ static float Return_Data_distance(float a, float b )
 }
 
 void rangeCheck(float *dataset_arr, unsigned int length_dataset);
-void Print_Range(int start_idx , int end_idx , float* data_buff, int range_found);
+void Print_Range(int start_idx , int end_idx , float* data_buff, int range_found, int objective);
 int sanityCheck(float *buffer ,unsigned int buff_length );
 
 #endif
